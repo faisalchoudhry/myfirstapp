@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import fire from "./fire";
+import {Button} from "react-bootstrap/Button";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class Register_user extends Component {
     constructor(props) {
@@ -9,7 +11,8 @@ class Register_user extends Component {
             passwordPlaceHolder: 'Please enter password.',
             required: true,
             emailVal: '',
-            passVal: ''
+            passVal: '',
+            btn: 'btn btn-primary'
         }
     }
 
@@ -61,15 +64,17 @@ class Register_user extends Component {
             <div>
                 <input type="email" onChange={this.handleEmailChange} placeholder={this.state.placeholder}
                        required={this.state.required}/>
+                <br/>
                 <input type="password" onChange={this.handlePasswordChange} placeholder={this.state.passwordPlaceHolder}
                        required={this.state.required}/>
-                <button onClick={this.registerUser}>Register User</button>
                 <br/>
-                <button onClick={this.loginUser}>Login User</button>
+                <button className={this.state.btn} onClick={this.registerUser}>Register User</button>
                 <br/>
-                <button onClick={this.checkUser}>Check Sign in or not</button>
+                <button className={this.state.btn} onClick={this.loginUser}>Login User</button>
                 <br/>
-                <button onClick={this.logoutUser}>Logout User</button>
+                <button className={this.state.btn} onClick={this.checkUser}>Check Sign in or not</button>
+                <br/>
+                <button className={this.state.btn} onClick={this.logoutUser}>Logout User</button>
             </div>
         )
     }
