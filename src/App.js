@@ -3,6 +3,7 @@ import './App.css';
 import ButtonClick from './Components/ButtonClick';
 import Register_user from './Components/Register_user';
 import React, {useState, useEffect} from "react";
+import Header from "./Components/Header";
 
 function App() {
     const [num, setNum] = useState(0)
@@ -13,6 +14,8 @@ function App() {
     })
     return (
         <div className="App">
+            <><Header></Header>
+            </>
             <ButtonClick></ButtonClick>
             <Register_user></Register_user>
             <div>
